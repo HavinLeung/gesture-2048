@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/color-v23/abc_tint_default.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/color-v23/abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/color-v23/abc_tint_edittext.xml"
+    }
+]
