@@ -39,6 +39,10 @@ public class myFSM {
     protected void iterateFSM(float[] current, float[] slope){
         switch (state){
             case WAIT:
+                if(Math.abs(current[0])>THRESHOLD_VALUES[0]){
+                    state = FSM_States.RISE;
+                    gesture = (slope[0]>0) ? possible_Gestures.RIGHT : possible_Gestures.LEFT ;
+                }
                 if(Math.abs(current[1])>THRESHOLD_VALUES[0]){
                     state = FSM_States.RISE;
                     gesture = (slope[1]>0) ? possible_Gestures.UP : possible_Gestures.DOWN ;
@@ -48,8 +52,20 @@ public class myFSM {
 
             case RISE:
                 counterCheck();
-                if(Math.abs(current[1])>THRESHOLD_VALUES[1]){
-                    state = FSM_States.PEAK;
+                switch(gesture) {
+                    case LEFT:
+                    case RIGHT:
+                    if (Math.abs(current[0]) > THRESHOLD_VALUES[1]) {
+                        state = FSM_States.PEAK;
+                    }
+                    break;
+
+                    case UP:
+                    case DOWN:
+                    if (Math.abs(current[1]) > THRESHOLD_VALUES[1]) {
+                        state = FSM_States.PEAK;
+                    }
+                    break;
                 }
                 break;
 
@@ -58,11 +74,13 @@ public class myFSM {
                 counterCheck();
                 switch (gesture){
                     case UP:
+                    case RIGHT:
                         if(slope[1]<0){
                             state=FSM_States.STABLE;
                         }
                         break;
                     case DOWN:
+                    case LEFT:
                         if(slope[1]>0){
                             state=FSM_States.STABLE;
                         }
@@ -82,8 +100,10 @@ public class myFSM {
             case RECOGNIZED:
                 switch (gesture){
                     case LEFT:
+                        myTV.setText("Gesture: LEFT");
                         break;
                     case RIGHT:
+                        myTV.setText("Gesture: RIGHT");
                         break;
                     case UP:
                         myTV.setText("Gesture: UP");
