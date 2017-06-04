@@ -3,7 +3,6 @@ package lab1_203_12.uwaterloo.ca.lab2;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.widget.TextView;
 
 import java.util.LinkedList;
 
@@ -14,54 +13,41 @@ import ca.uwaterloo.sensortoy.LineGraphView;
  */
 
 public class ThreeSensorEventListener implements SensorEventListener{
-    private TextView output;
-    private TextView record;
-    private double currentmax;
     private LineGraphView graph;
-    public LinkedList<float[]> xyzarray = new LinkedList<>();
+    private myFSM FSM;
+    LinkedList<float[]> xyzarray = new LinkedList<>();
+    float[] xyz_prev={0,0,0};
+    float[] xyz_curr={0,0,0};
+    float[] xyz_slope={0,0,0};
+    private static final int FILTER_CONSTANT = 5;
 
-    public ThreeSensorEventListener(TextView outputView, TextView record) {
-        output = outputView;
-        this.record = record;
-        currentmax =0;
 
+    public ThreeSensorEventListener(LineGraphView x,myFSM y) {
+        graph = x;
+        FSM = y;
     }
 
-    public ThreeSensorEventListener(TextView outputView, TextView record, LineGraphView x) {
-        output = outputView;
-        this.record = record;
-        currentmax =0;
-        graph=x;
-    }
-    public void resetRecord(){
-        currentmax=0;
-        record.setText("(0,0,0)");
-    }
 
     public void onAccuracyChanged(Sensor s, int i) { }
 
 
     public void onSensorChanged(SensorEvent se) {
-        float x=se.values[0];
-        float y=se.values[1];
-        float z=se.values[2];
-        float[] xyz = {x,y,z};
-        double max = Math.sqrt(x*x+y*y+z*z);
-         if(graph!=null){
-             graph.addPoint(se.values);
-             if(xyzarray.size()>99){
-                 xyzarray.remove();
-             }
-             xyzarray.add(xyz);
-
-         }
-        String current = String.format("(%.2f,%.2f,%.2f)",x,y,z);
-        output.setText(current);
-        if(max>currentmax){
-            record.setText(current);
-            currentmax = max;
-
+        for(int i=0;i<3;i++){
+            xyz_prev[i] = xyz_curr[i]; //store previous values to calculate slope
+            xyz_curr[i] = (se.values[i]-xyz_curr[i])/FILTER_CONSTANT;
+            xyz_slope[i] = xyz_curr[i] - xyz_prev[i];
         }
+        FSM.iterateFSM(xyz_curr,xyz_slope);
+        if(graph!=null){
+            graph.addPoint(xyz_curr);
+            if(xyzarray.size()>99){
+                xyzarray.remove();
+            }
+            float[] xyz_copy = new float[3];
+            System.arraycopy(xyz_curr,0,xyz_copy,0,3);
+            xyzarray.add(xyz_copy);
+        }
+
     }
 
 }

@@ -41,31 +41,34 @@ public class MainActivity extends AppCompatActivity {
 
         //initialize all labels
         final TextView CSVDIR = new TextView(getApplicationContext());
-
-        TextView AccelerometerLabel = new TextView(getApplicationContext());
-        AccelerometerLabel.setText("The Accelerometer reading is:");
-        TextView AccelerometerReading = new TextView(getApplicationContext());
-        TextView AccelerometerRecordLabel = new TextView(getApplicationContext());
-        AccelerometerRecordLabel.setText("The Record-High Accelerometer reading is:");
-        TextView AccelerometerRecord = new TextView(getApplicationContext());
-
+        final TextView gestureName = new TextView(getApplicationContext());
+        gestureName.setTextSize(42);
+        //get sensormanager
         SensorManager sensorManager =(SensorManager) getSystemService(SENSOR_SERVICE);
 
+        //create FSM object
+        myFSM FSM = new myFSM(gestureName);
 
         //accelerometer sensor
         Sensor accelerometerSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
-        final ThreeSensorEventListener l = new ThreeSensorEventListener(AccelerometerReading,AccelerometerRecord,graph);
+        final ThreeSensorEventListener l = new ThreeSensorEventListener(graph, FSM);
         sensorManager.registerListener(l, accelerometerSensor,SensorManager.SENSOR_DELAY_GAME);
+
+
+
+        /*
+
+        BUTTONS CREATED HERE
+
+        */
 
         //csv file button
         Button createCSV = new Button(getApplicationContext());
 
         createCSV.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-
                 DateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
                 Date date = new Date();
-
                 File dir = getExternalFilesDir(null);
                 File file = new File(dir,dateFormat.format(date)+".csv");
                 try {
@@ -96,25 +99,14 @@ public class MainActivity extends AppCompatActivity {
         quit.setText("QUIT");
 
 
-        //Button to clear high
-        Button clearRecord = new Button(getApplicationContext());
-        clearRecord.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                l.resetRecord();
-            }
-        });
-        clearRecord.setText("Clear Record-High Numbers");
 
         //all the addView
         x.addView(CSVDIR);
         x.addView(graph);
         x.addView(createCSV);
-        x.addView(clearRecord);
         x.addView(quit);
-        x.addView(AccelerometerLabel);
-        x.addView(AccelerometerReading);
-        x.addView(AccelerometerRecordLabel);
-        x.addView(AccelerometerRecord);
+        x.addView(gestureName);
+
 
 
 
