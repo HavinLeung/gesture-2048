@@ -11,13 +11,13 @@ public class myFSM {
     private TextView myTV;
 
     private enum possible_Gestures{LEFT,RIGHT,UP,DOWN, NONE};
-    private enum FSM_States{WAIT,RISE,PEAK, STABLE,RECOGNIZED};
+    private enum FSM_States{WAIT,RISE,PEAK,TROUGH,STABLE,RECOGNIZED};
     private FSM_States state = FSM_States.WAIT; //initial state is "wait"
     private possible_Gestures gesture = possible_Gestures.NONE;
 
     private int counter = 0;
     private static final int COUNTER_LIMIT = 50;
-    private static final double[] THRESHOLD_VALUES ={0.6,1,0.2}; //thresholds for RISE,PEAK,DETERMINED
+    private static final double[] THRESHOLD_VALUES ={0.6,1,0.8,0.2}; //thresholds for RISE,PEAK,DETERMINED
 
 
 
@@ -74,15 +74,43 @@ public class myFSM {
                 counterCheck();
                 switch (gesture){
                     case UP:
-                    case RIGHT:
                         if(slope[1]<0){
-                            state=FSM_States.STABLE;
+                            state=FSM_States.TROUGH;
                         }
                         break;
                     case DOWN:
-                    case LEFT:
                         if(slope[1]>0){
-                            state=FSM_States.STABLE;
+                            state=FSM_States.TROUGH;
+                        }
+                        break;
+                    case RIGHT:
+                        if(slope[0]<0){
+                            state=FSM_States.TROUGH;
+                        }
+                        break;
+                    case LEFT:
+                        if(slope[0]>0){
+                            state=FSM_States.TROUGH;
+                        }
+                        break;
+                }
+                break;
+
+
+            case TROUGH:
+                counterCheck();
+                switch(gesture) {
+                    case LEFT:
+                    case RIGHT:
+                        if (Math.abs(current[0]) > THRESHOLD_VALUES[2]) {
+                            state = FSM_States.STABLE;
+                        }
+                        break;
+
+                    case UP:
+                    case DOWN:
+                        if (Math.abs(current[1]) > THRESHOLD_VALUES[2]) {
+                            state = FSM_States.STABLE;
                         }
                         break;
                 }
@@ -91,7 +119,7 @@ public class myFSM {
 
             case STABLE:
                 counterCheck();
-                if(Math.abs(current[1])<THRESHOLD_VALUES[2]){
+                if(Math.abs(current[1])<THRESHOLD_VALUES[3]){
                     state=FSM_States.RECOGNIZED;
                 }
                 break;

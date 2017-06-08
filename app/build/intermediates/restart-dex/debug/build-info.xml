@@ -2,70 +2,33 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="25"
-    build-mode="FULL"
+    build-mode="COLD"
     density="560dpi"
     format="10"
     plugin-version="2.3.2"
-    timestamp="1496619066921"
+    timestamp="1496936880635"
     token="5148448110594844170"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="183" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="247" />
+        duration="0" />
     <task
         name="verifier"
-        duration="40" />
-
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-        type="SPLIT" />
-    <artifact
-        location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/outputs/apk/app-debug.apk"
-        type="SPLIT_MAIN" />
+        duration="0" />
 
     <build
         build-mode="FULL"
-        timestamp="1496619066921"
+        timestamp="1496936599451"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
             location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
@@ -74,16 +37,13 @@
             location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
             location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
@@ -92,14 +52,29 @@
             location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
             location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/outputs/apk/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
+    <build
+        build-mode="COLD"
+        timestamp="1496936864264"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1496936880635"
+        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>
