@@ -12,7 +12,7 @@
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context="lab1_203_12.uwaterloo.ca.lab2.MainActivity">
+        tools:context="lab2_203_12.uwaterloo.ca.lab2.MainActivity">
 
     </LinearLayout>
 </ScrollView>
