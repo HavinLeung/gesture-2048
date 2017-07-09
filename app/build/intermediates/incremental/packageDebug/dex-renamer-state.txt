@@ -1,7 +1,7 @@
-#Tue Jun 13 09:10:22 EDT 2017
-base.0=/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_6530d532deb8ae9560fb36643f1ad29861c95881
+#Sun Jul 09 17:08:25 EDT 2017
+base.0=/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_36823896b31abd5c62a5b7f45e847d03766309f6
 renamed.1=classes2.dex
 renamed.0=classes.dex
-file.1=/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8c80adda85331051a48fdeefb1b6084618fd0217/classes.dex
-base.1=/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8c80adda85331051a48fdeefb1b6084618fd0217
-file.0=/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_6530d532deb8ae9560fb36643f1ad29861c95881/classes.dex
+file.1=/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_446cbffc6136bbef89a6332ecf67ac48911c19dd/classes.dex
+base.1=/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_446cbffc6136bbef89a6332ecf67ac48911c19dd
+file.0=/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_36823896b31abd5c62a5b7f45e847d03766309f6/classes.dex

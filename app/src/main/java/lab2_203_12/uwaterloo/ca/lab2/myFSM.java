@@ -9,6 +9,7 @@ import android.widget.TextView;
 public class myFSM {
     //class  variables
     private TextView myTV;
+    private Game2048 game;
 
     private enum possible_Gestures{LEFT,RIGHT,UP,DOWN, NONE};
     private enum FSM_States{WAIT,RISE,PEAK,TROUGH,STABLE,RECOGNIZED};
@@ -23,8 +24,9 @@ public class myFSM {
 
 
     //class constructor
-    myFSM(TextView x){
+    myFSM(TextView x, Game2048 y){
         myTV =x;
+        game=y;
     }
     //class functions
     private void counterCheck(){
@@ -158,17 +160,23 @@ public class myFSM {
                 switch (gesture){
                     case LEFT:
                         myTV.setText("Gesture: LEFT");
+                        game.moveLeft();
                         break;
                     case RIGHT:
                         myTV.setText("Gesture: RIGHT");
+                        game.moveRight();
                         break;
                     case UP:
                         myTV.setText("Gesture: UP");
+                        game.moveUp();
                         break;
                     case DOWN:
                         myTV.setText("Gesture: DOWN");
+                        game.moveDown();
                         break;
                 }
+                game.drawGraphics();
+                myTV.bringToFront();
                 counter=0;
                 gesture = possible_Gestures.NONE;
                 state = FSM_States.WAIT;

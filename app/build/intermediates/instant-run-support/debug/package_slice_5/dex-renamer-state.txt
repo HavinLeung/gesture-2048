@@ -1,4 +1,4 @@
-#Tue Jun 13 08:46:08 EDT 2017
-base.0=/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_5
+#Sun Jul 09 17:08:25 EDT 2017
+base.0=/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_5
 renamed.0=classes.dex
-file.0=/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_5/classes.dex
+file.0=/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_5/classes.dex

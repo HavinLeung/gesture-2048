@@ -6,14 +6,11 @@ import android.hardware.SensorEventListener;
 
 import java.util.LinkedList;
 
-import ca.uwaterloo.sensortoy.LineGraphView;
-
 /**
  * Created by havinleung on 2017-05-16.
  */
 
 public class ThreeSensorEventListener implements SensorEventListener{
-    private LineGraphView graph;
     private myFSM FSM;
     LinkedList<float[]> xyzarray = new LinkedList<>();
     float[] xyz_prev={0,0,0};
@@ -22,8 +19,7 @@ public class ThreeSensorEventListener implements SensorEventListener{
     private static final int FILTER_CONSTANT = 5;
 
 
-    public ThreeSensorEventListener(LineGraphView x,myFSM y) {
-        graph = x;
+    public ThreeSensorEventListener(myFSM y) {
         FSM = y;
     }
 
@@ -38,16 +34,6 @@ public class ThreeSensorEventListener implements SensorEventListener{
             xyz_slope[i] = xyz_curr[i] - xyz_prev[i];
         }
         FSM.iterateFSM(xyz_curr,xyz_slope);
-        if(graph!=null){
-            graph.addPoint(xyz_curr);
-            if(xyzarray.size()>99){
-                xyzarray.remove();
-            }
-            float[] xyz_copy = new float[3];
-            System.arraycopy(xyz_curr,0,xyz_copy,0,3);
-            xyzarray.add(xyz_copy);
-        }
-
     }
 
 }

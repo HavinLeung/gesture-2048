@@ -1,26 +1,26 @@
 [
     {
-        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
-        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/layout-v11/notification_template_big_media_narrow.xml"
-    },
-    {
-        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
-        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/layout-v11/notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
         "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/layout-v11/notification_template_big_media_custom.xml"
     },
     {
-        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/layout-v11/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
         "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/layout-v11/notification_media_action.xml"
     },
     {
-        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
-        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/layout-v11/notification_template_big_media.xml"
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/layout-v11/notification_media_cancel_action.xml"
     },
     {
-        "merged": "/Users/havinleung/AndroidStudioProjects/Lab2/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
-        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/layout-v11/notification_template_big_media.xml"
     }
 ]
