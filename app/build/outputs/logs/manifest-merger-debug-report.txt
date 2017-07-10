@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:2:1-24:12
+ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:2:1-22:12
 	package
 		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:3:5-44
 		INJECTED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml
@@ -13,12 +13,8 @@ ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidMani
 	android:versionCode
 		INJECTED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:5:5-81
-	android:name
-		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:5:22-78
 application
-ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:7:5-22:19
+ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:5:5-20:19
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.1] /Users/havinleung/.android/build-cache/20b9d7fd64b1c69ecb4eea5497845f3960239f21/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.1] /Users/havinleung/.android/build-cache/99ec66e68b140aed10ae47306ce1a79743fa2c4d/output/AndroidManifest.xml:29:5-20
@@ -30,31 +26,31 @@ MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/havinleu
 MERGED from [com.android.support:support-compat:25.3.1] /Users/havinleung/.android/build-cache/63b9d5adcc9412199d02d92459bf3f91b3d35746/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/havinleung/.android/build-cache/4debe8221c327696a0fc5cabd7430fc66311527e/output/AndroidManifest.xml:9:5-20
 	android:label
-		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:11:9-41
+		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:9:9-41
 	android:supportsRtl
-		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:11:9-35
 	android:roundIcon
-		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:12:9-54
+		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:10:9-54
 	android:allowBackup
-		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:7:9-35
 	android:icon
-		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:10:9-43
+		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:8:9-43
 	android:theme
-		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:14:9-40
+		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:12:9-40
 activity#lab2_203_12.uwaterloo.ca.lab2.MainActivity
-ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:15:9-21:20
+ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:13:9-19:20
 	android:name
-		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:15:19-76
+		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:13:19-76
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:16:13-20:29
+ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:14:13-18:29
 action#android.intent.action.MAIN
-ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:17:17-69
+ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:15:17-69
 	android:name
-		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:17:25-66
+		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:19:17-77
+ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:17:17-77
 	android:name
-		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:19:27-74
+		ADDED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml:17:27-74
 uses-sdk
 INJECTED from /Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/AndroidManifest.xml:21:5-23:78

@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         gestureName.setTextSize(32);
 
         final TextView gameState = new TextView(getApplicationContext());
-        gameState.setTextSize(100);
+        gameState.setTextSize(120);
+        gameState.setTextColor(Color.RED);
         //get sensormanager
         SensorManager sensorManager =(SensorManager) getSystemService(SENSOR_SERVICE);
 
@@ -77,3 +78,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+//TODO: refactor variables names
+//TODO: make block child textview better centered
