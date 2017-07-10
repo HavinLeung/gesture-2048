@@ -13,7 +13,7 @@ class Tile extends android.support.v7.widget.AppCompatImageView implements TileT
     private final int CORNER = 9;
     private final float IMAGE_SCALE = 0.75f;
     private final float TV_OFFSET_Y = 70;
-    private final float TV_OFFSET_X = 125;
+    private final float TV_OFFSET_X = 85;
     private final int animateTime = 20;
     protected int value;
     private int currentX;
@@ -49,10 +49,12 @@ class Tile extends android.support.v7.widget.AppCompatImageView implements TileT
     }
     @TargetApi(12)
     public void moveTile(int r, int c){
-        this.animate().translationX(c*360).setDuration(animateTime);
-        this.animate().translationY(r*360).setDuration(animateTime);
-        TV.animate().translationX(c*360+TV_OFFSET_X).setDuration(animateTime);
-        TV.animate().translationY(r*360+TV_OFFSET_Y).setDuration(animateTime);
+        currentX = CORNER+360*c;
+        currentY = CORNER+360*r;
+        this.animate().translationX(CORNER + c*360).setDuration(animateTime);
+        this.animate().translationY(CORNER + r*360).setDuration(animateTime);
+        TV.animate().translationX(currentX + TV_OFFSET_X).setDuration(animateTime);
+        TV.animate().translationY(currentY + TV_OFFSET_Y).setDuration(animateTime);
     }
     void doubleValue(){
         value = value*2;

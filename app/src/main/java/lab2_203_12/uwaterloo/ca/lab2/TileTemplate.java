@@ -1,8 +1,6 @@
 package lab2_203_12.uwaterloo.ca.lab2;
 
 import android.annotation.TargetApi;
-import android.view.Gravity;
-import android.widget.TextView;
 
 /**
  * Created by havinleung on 2017-07-09.

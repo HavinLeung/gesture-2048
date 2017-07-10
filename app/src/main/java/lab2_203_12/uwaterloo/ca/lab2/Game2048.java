@@ -1,13 +1,7 @@
 package lab2_203_12.uwaterloo.ca.lab2;
 
-import android.annotation.TargetApi;
-import android.content.Context;
-import android.os.Build;
-import android.view.Gravity;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.Random;
 
