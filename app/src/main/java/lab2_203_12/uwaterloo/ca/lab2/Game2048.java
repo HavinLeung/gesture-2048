@@ -1,5 +1,7 @@
 package lab2_203_12.uwaterloo.ca.lab2;
 
+import android.app.Activity;
+import android.os.Handler;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -11,6 +13,7 @@ import java.util.Random;
 
 public class Game2048 {
     //variables
+    private Activity mainactivity;
     private RelativeLayout layout;
     protected enum gameState{Win,Lose,Play}
     private TextView myTV;
@@ -23,7 +26,8 @@ public class Game2048 {
     private static Random rand = new Random();
 
 
-    public Game2048(TextView x, RelativeLayout y){
+    public Game2048(Activity mainactivity, TextView x, RelativeLayout y){
+        this.mainactivity = mainactivity;
         myTV = x;
         layout = y;
         startGame();
@@ -48,7 +52,7 @@ public class Game2048 {
             int nextCol = col + incrementX;
             if(tiles[row][col]==null) continue; //skip iteration because nothing to compare with
             while(nextCol >= 0 && nextCol <=3 && nextRow >= 0 && nextRow <= 3){//no out of bounds
-                Tile current = tiles[row][col];
+                final Tile current = tiles[row][col];
                 Tile adjacent = tiles[nextRow][nextCol];
                 if(adjacent == null){ //adjacent can move to current position
                     if (checkingMoves) return true;
@@ -67,7 +71,14 @@ public class Game2048 {
                     if(adjacent.merged) break;
                     //can be merged
                     tiles[nextRow][nextCol].doubleValue();
-                    tiles[row][col].deleteTile();
+                    tiles[row][col].moveTile(nextRow,nextCol);
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            current.deleteTile();
+                        }
+                    }, 60); // after 60 ms
                     tiles[row][col] = null;
                     if(tiles[nextRow][nextCol].value > currentHigh) currentHigh = tiles[nextRow][nextCol].value;
                     moved = true;

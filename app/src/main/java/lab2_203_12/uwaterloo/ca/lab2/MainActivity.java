@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         SensorManager sensorManager =(SensorManager) getSystemService(SENSOR_SERVICE);
 
         //create game object
-        final Game2048 game = new Game2048(gameState,x);
+        final Game2048 game = new Game2048(this,gameState,x);
 
         //create FSM object
         myFSM FSM = new myFSM(gestureName,game);

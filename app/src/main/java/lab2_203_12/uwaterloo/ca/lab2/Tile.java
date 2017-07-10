@@ -14,7 +14,7 @@ class Tile extends android.support.v7.widget.AppCompatImageView implements TileT
     private final float IMAGE_SCALE = 0.75f;
     private final float TV_OFFSET_Y = 70;
     private final float TV_OFFSET_X = 85;
-    private final int animateTime = 20;
+    private final int animateTime = 30;
     protected int value;
     private int currentX;
     private int currentY;
@@ -30,13 +30,15 @@ class Tile extends android.support.v7.widget.AppCompatImageView implements TileT
         this.setImageResource(R.drawable.gameblock);
         currentX = CORNER+360*c;
         currentY = CORNER+360*r;
-        this.setScaleX(IMAGE_SCALE);
-        this.setScaleY(IMAGE_SCALE);
+        this.setScaleX(0.1f);
+        this.setScaleY(0.1f);
         this.setPivotX(this.getWidth() / 2);
         this.setPivotY(this.getHeight() / 2);
         this.setX(currentX);
         this.setY(currentY);
         layout.addView(this);
+        this.animate().scaleX(IMAGE_SCALE);
+        this.animate().scaleY(IMAGE_SCALE);
         //child textview
         TV = new TextView(layout.getContext());
         TV.setGravity(Gravity.CENTER);
@@ -49,6 +51,7 @@ class Tile extends android.support.v7.widget.AppCompatImageView implements TileT
     }
     @TargetApi(12)
     public void moveTile(int r, int c){
+        if(currentX == CORNER+360*c && currentY == CORNER+360*r) return; //no movement
         currentX = CORNER+360*c;
         currentY = CORNER+360*r;
         this.animate().translationX(CORNER + c*360).setDuration(animateTime);
