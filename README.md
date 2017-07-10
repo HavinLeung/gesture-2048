@@ -1,2 +1,2 @@
-# ECE155Lab1
-ECE155 Lab 1 - Get sensor readings and push 100 accelerometer readings to a CSV file
+# Gesture controlled 2048
+Gesture comtrolled 2048 game implemented by using SensorEventListener and a finite state machine.
