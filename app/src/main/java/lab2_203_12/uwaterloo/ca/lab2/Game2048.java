@@ -36,6 +36,7 @@ public class Game2048 {
     }
 
     void startGame(){
+        currentHigh = 0;
         state = gameState.Play;
         tiles = new Tile[side][side];
         addRandomTile();
@@ -69,11 +70,12 @@ public class Game2048 {
                 }else if(current.value == adjacent.value){
                     if (checkingMoves) return true;
 
+                    if(adjacent.merged) break;
                     //can be merged
                     tiles[nextRow][nextCol].doubleValue();
                     tiles[row][col].deleteTile();
                     tiles[row][col] = null;
-                    if(current.value > currentHigh) currentHigh = current.value;
+                    if(tiles[nextRow][nextCol].value > currentHigh) currentHigh = tiles[nextRow][nextCol].value;
                     moved = true;
                     break;
                 }else{
@@ -91,6 +93,7 @@ public class Game2048 {
                 }
             }
         }
+        resetMerged();
         return moved;
     }
     public boolean moveUp(){
@@ -115,7 +118,7 @@ public class Game2048 {
             row = pos / side;
             col = pos % side;
         }
-        int randomValue = (Math.random() < 0.5) ? 19 : 7; //90% chance of getting a 2
+        int randomValue = (Math.random() < 0.9) ? 2 : 4; //90% chance of getting a 2
         tiles[row][col] = new Tile(randomValue,row,col);
         currentHigh = (randomValue > currentHigh) ? randomValue : currentHigh;
     }
@@ -142,6 +145,13 @@ public class Game2048 {
             myTV.bringToFront();
         }
     }
+    private void resetMerged(){
+        for(int i = 0; i<side ;i++){
+            for(int j = 0; j<side; j++){
+                if(tiles[i][j]!=null)tiles[i][j].merged=false;
+            }
+        }
+    }
 
     private class Tile extends android.support.v7.widget.AppCompatImageView{
         private final int CORNER = 9;
@@ -153,9 +163,11 @@ public class Game2048 {
         private int currentX;
         private int currentY;
         private TextView TV;
+        private boolean merged;
         @TargetApi(12)
         public Tile(int x, int r, int c){
             super(layout.getContext());
+            merged = false;
             value = x;
             this.setImageResource(R.drawable.gameblock);
             currentX = CORNER+360*c;
@@ -187,11 +199,11 @@ public class Game2048 {
         private void doubleValue(){
             value = value*2;
             TV.setText(String.format("%d",value));
+            merged=true;
         }
         private void deleteTile(){
             layout.removeView(TV);
             layout.removeView(this);
         }
-
     }
 }
