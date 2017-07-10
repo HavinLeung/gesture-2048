@@ -115,7 +115,7 @@ public class Game2048 {
             row = pos / side;
             col = pos % side;
         }
-        int randomValue = (Math.random() < 0.9) ? 2 : 4; //90% chance of getting a 2
+        int randomValue = (Math.random() < 0.5) ? 19 : 7; //90% chance of getting a 2
         tiles[row][col] = new Tile(randomValue,row,col);
         currentHigh = (randomValue > currentHigh) ? randomValue : currentHigh;
     }
@@ -127,7 +127,6 @@ public class Game2048 {
     }
 
     public void drawGraphics(){
-        if (state == gameState.Play) {
             for (int r = 0; r < side; r++) {
                 for (int c = 0; c < side; c++) {
                     if (tiles[r][c] != null) {
@@ -135,10 +134,10 @@ public class Game2048 {
                     }
                 }
             }
-        }else if(state == gameState.Lose){
+        if(state == gameState.Lose){
             myTV.setText("LOSE");
             myTV.bringToFront();
-        }else{
+        }else if(state == gameState.Win){
             myTV.setText("WIN");
             myTV.bringToFront();
         }
@@ -149,7 +148,7 @@ public class Game2048 {
         private final float IMAGE_SCALE = 0.75f;
         private final float TV_OFFSET_Y = 70;
         private final float TV_OFFSET_X = 125;
-        private final int animateTime = 30;
+        private final int animateTime = 20;
         private int value;
         private int currentX;
         private int currentY;

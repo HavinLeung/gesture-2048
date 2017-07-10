@@ -68,12 +68,12 @@
         "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/drawable/abc_ratingbar_material.xml"
     },
     {
-        "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/drawable/gameboard.png",
-        "source": "/Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/res/drawable/gameboard.png"
-    },
-    {
         "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_tick_mark_material.xml",
         "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/drawable/abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/drawable/gameboard.png",
+        "source": "/Users/havinleung/AndroidStudioProjects/Lab4/app/src/main/res/drawable/gameboard.png"
     },
     {
         "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",

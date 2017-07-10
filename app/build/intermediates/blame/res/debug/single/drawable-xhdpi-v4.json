@@ -80,12 +80,12 @@
         "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png",
-        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
-    },
-    {
         "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png",
         "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png",
+        "source": "/Users/havinleung/.android/build-cache/1b8a3acd043d8d27b3f425bad8705028ecc8cf37/output/res/drawable-xhdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png",
