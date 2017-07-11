@@ -19,7 +19,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="lab2_203_12.uwaterloo.ca.lab2.MainActivity" >
+        <activity android:name="ece155.uwaterloo.ca.game2048.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

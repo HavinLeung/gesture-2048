@@ -1,7 +1,7 @@
 /**
  * Automatically generated file. DO NOT MODIFY
  */
-package lab2_203_12.uwaterloo.ca.lab2;
+package ece155.uwaterloo.ca.game2048;
 
 public final class BuildConfig {
   public static final boolean DEBUG = Boolean.parseBoolean("true");

@@ -1,4 +1,4 @@
-#Sun Jul 09 21:59:08 EDT 2017
+#Tue Jul 11 10:23:12 EDT 2017
 base.0=/Users/havinleung/AndroidStudioProjects/Lab4/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_36823896b31abd5c62a5b7f45e847d03766309f6
 renamed.1=classes2.dex
 renamed.0=classes.dex

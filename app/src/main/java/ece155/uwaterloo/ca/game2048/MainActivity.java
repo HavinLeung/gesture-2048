@@ -1,4 +1,4 @@
-package lab2_203_12.uwaterloo.ca.lab2;
+package ece155.uwaterloo.ca.game2048;
 
 import android.annotation.TargetApi;
 import android.graphics.Color;
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         //line taken from Arunkumar on stackoverflow
         getWindow().getDecorView().setBackgroundColor(Color.WHITE);
         RelativeLayout x = (RelativeLayout) (findViewById(R.id.layout));
+
         x.getLayoutParams().height = GAMEBOARD_DIMENSION;
         x.getLayoutParams().width = GAMEBOARD_DIMENSION;
         x.setBackgroundResource(R.drawable.gameboard);
@@ -26,15 +27,15 @@ public class MainActivity extends AppCompatActivity {
         //initialize all labels
         final TextView gestureName = new TextView(getApplicationContext());
         gestureName.setTextSize(32);
-
         final TextView gameState = new TextView(getApplicationContext());
         gameState.setTextSize(120);
         gameState.setTextColor(Color.RED);
+
         //get sensormanager
         SensorManager sensorManager =(SensorManager) getSystemService(SENSOR_SERVICE);
 
         //create game object
-        final Game2048 game = new Game2048(this,gameState,x);
+        final Game2048 game = new Game2048(gameState,x);
 
         //create FSM object
         myFSM FSM = new myFSM(gestureName,game);
@@ -58,22 +59,9 @@ public class MainActivity extends AppCompatActivity {
         gameState.setLayoutParams(p);
         x.addView(gameState);
 
-        //create up/down/left/right buttons for debugging
-//        Button buttonUP = new Button(getApplicationContext());
-//
-//        buttonUP.setOnClickListener(new View.OnClickListener(){
-//            public void onClick(View v){
-//                game.moveUp();
-//            }
-//        });
-//        buttonUP.setText("UP");
-//        buttonUP.setY(1450);
-//        x.addView(buttonUP);
-
 
 
 
     }
 }
-//TODO: refactor variables names
 //TODO: make block child textview better centered

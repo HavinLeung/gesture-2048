@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package lab2_203_12.uwaterloo.ca.lab2;
+package ece155.uwaterloo.ca.game2048;
 
 public final class R {
     public static final class anim {

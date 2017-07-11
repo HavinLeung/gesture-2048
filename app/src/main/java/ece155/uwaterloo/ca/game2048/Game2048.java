@@ -1,6 +1,5 @@
-package lab2_203_12.uwaterloo.ca.lab2;
+package ece155.uwaterloo.ca.game2048;
 
-import android.app.Activity;
 import android.os.Handler;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -12,53 +11,57 @@ import java.util.Random;
  */
 
 public class Game2048 {
-    //variables
-    private Activity mainactivity;
     private RelativeLayout layout;
-    protected enum gameState{Win,Lose,Play}
+    private enum gameState{WIN, LOSE, PLAY}
     private TextView myTV;
-    static int currentHigh;
-    final static int targetHigh = 256;
-    final static int side = 4;
-    static gameState state = gameState.Play;
-    static boolean checkingMoves = false;
-    private static Tile[][] tiles;
-    private static Random rand = new Random();
+    private static int currentHigh;
+    private final static int targetHigh = 2048;
+    private final static int sideLength = 4;
+    private static gameState state = gameState.PLAY;
+    private static boolean checkingMoves = false;
+    private static Tile[][] TileArray;
+    private static Random randomInt = new Random();
 
 
-    public Game2048(Activity mainactivity, TextView x, RelativeLayout y){
-        this.mainactivity = mainactivity;
+    public Game2048(TextView x, RelativeLayout y){
         myTV = x;
         layout = y;
         startGame();
     }
 
-    void startGame(){
+    private void startGame(){
         currentHigh = 0;
-        state = gameState.Play;
-        tiles = new Tile[side][side];
+        state = gameState.PLAY;
+        TileArray = new Tile[sideLength][sideLength];
         addRandomTile();
         addRandomTile();
     }
+//    private void restartGame(){
+//        //TODO: tile cleanup
+//        startGame();
+//    }
+
 
     private boolean move(int startTile, int incrementY, int incrementX){
-        if(state != gameState.Play) return false;
+        if(state != gameState.PLAY) return false;
         boolean moved = false;
-        for(int i = 0; i < side*side ; i++){
+        for(int i = 0; i < sideLength * sideLength; i++){
             int j = Math.abs(startTile - i);
-            int row = j / side;
-            int col = j % side;
+            int row = j / sideLength;
+            int col = j % sideLength;
             int nextRow = row + incrementY;
             int nextCol = col + incrementX;
-            if(tiles[row][col]==null) continue; //skip iteration because nothing to compare with
+
+            if(TileArray[row][col]==null) continue; //skip iteration because nothing to compare with
+
             while(nextCol >= 0 && nextCol <=3 && nextRow >= 0 && nextRow <= 3){//no out of bounds
-                final Tile current = tiles[row][col];
-                Tile adjacent = tiles[nextRow][nextCol];
+                final Tile current = TileArray[row][col];
+                Tile adjacent = TileArray[nextRow][nextCol];
                 if(adjacent == null){ //adjacent can move to current position
                     if (checkingMoves) return true;
 
-                    tiles[nextRow][nextCol] = current;
-                    tiles[row][col] = null;
+                    TileArray[nextRow][nextCol] = current;
+                    TileArray[row][col] = null;
                     //shift comparison to next two blocks
                     row = nextRow;
                     col = nextCol;
@@ -70,31 +73,34 @@ public class Game2048 {
 
                     if(adjacent.merged) break;
                     //can be merged
-                    tiles[nextRow][nextCol].doubleValue();
-                    tiles[row][col].moveTile(nextRow,nextCol);
+                    TileArray[nextRow][nextCol].doubleValue();
+                    TileArray[row][col].moveTile(nextRow,nextCol);
                     final Handler handler = new Handler();
+
+                    //finish animation before deleting tile
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             current.deleteTile();
                         }
                     }, 60); // after 60 ms
-                    tiles[row][col] = null;
-                    if(tiles[nextRow][nextCol].value > currentHigh) currentHigh = tiles[nextRow][nextCol].value;
+
+                    TileArray[row][col] = null;
+                    if(TileArray[nextRow][nextCol].value > currentHigh) currentHigh = TileArray[nextRow][nextCol].value;
                     moved = true;
                     break;
-                }else{
+                }else{ //cannot be merged
                     break;
                 }
             }
         }
         if(moved){
             if(currentHigh == targetHigh){
-                state = gameState.Win;
+                state = gameState.WIN;
             }else{
                 addRandomTile();
                 if(!movesAvailable()){
-                    state = gameState.Lose;
+                    state = gameState.LOSE;
                 }
             }
         }
@@ -105,26 +111,26 @@ public class Game2048 {
         return move(0, -1, 0);
     }
     public boolean moveDown(){
-        return move(side*side - 1, 1, 0);
+        return move(sideLength * sideLength - 1, 1, 0);
     }
     public boolean moveLeft(){
         return move(0, 0, -1);
     }
     public boolean moveRight(){
-        return move(side*side - 1, 0, 1);
+        return move(sideLength * sideLength - 1, 0, 1);
     }
     private void addRandomTile(){
-        int pos = rand.nextInt(side*side-1);
-        int row = pos / side;
-        int col = pos % side;
+        int pos = randomInt.nextInt(sideLength * sideLength -1);
+        int row = pos / sideLength;
+        int col = pos % sideLength;
         //if we randomly selected a filled grid...
-        while(tiles[row][col]!=null){
-            pos = (pos + 1) % (side*side);
-            row = pos / side;
-            col = pos % side;
+        while(TileArray[row][col]!=null){
+            pos = (pos + 1) % (sideLength * sideLength);
+            row = pos / sideLength;
+            col = pos % sideLength;
         }
         int randomValue = (Math.random() < 0.9) ? 2 : 4; //90% chance of getting a 2
-        tiles[row][col] = new Tile(randomValue,row,col,layout);
+        TileArray[row][col] = new Tile(randomValue,row,col,layout);
         currentHigh = (randomValue > currentHigh) ? randomValue : currentHigh;
     }
     private boolean movesAvailable(){
@@ -135,25 +141,25 @@ public class Game2048 {
     }
 
     public void drawGraphics(){
-            for (int r = 0; r < side; r++) {
-                for (int c = 0; c < side; c++) {
-                    if (tiles[r][c] != null) {
-                        tiles[r][c].moveTile(r, c);
+            for (int r = 0; r < sideLength; r++) {
+                for (int c = 0; c < sideLength; c++) {
+                    if (TileArray[r][c] != null) {
+                        TileArray[r][c].moveTile(r, c);
                     }
                 }
             }
-        if(state == gameState.Lose){
+        if(state == gameState.LOSE){
             myTV.setText("LOSE");
             myTV.bringToFront();
-        }else if(state == gameState.Win){
+        }else if(state == gameState.WIN){
             myTV.setText("WIN");
             myTV.bringToFront();
         }
     }
     private void resetMerged(){
-        for(int i = 0; i<side ;i++){
-            for(int j = 0; j<side; j++){
-                if(tiles[i][j]!=null)tiles[i][j].merged=false;
+        for(int i = 0; i< sideLength; i++){
+            for(int j = 0; j< sideLength; j++){
+                if(TileArray[i][j]!=null) TileArray[i][j].merged=false;
             }
         }
     }

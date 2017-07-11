@@ -1,4 +1,4 @@
-package lab2_203_12.uwaterloo.ca.lab2;
+package ece155.uwaterloo.ca.game2048;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
